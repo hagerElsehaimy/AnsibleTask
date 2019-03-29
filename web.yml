@@ -1,0 +1,6 @@
+---
+- name: web server configuration
+  hosts: web
+  become: true
+  roles:
+   - web

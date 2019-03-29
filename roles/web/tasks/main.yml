@@ -1,0 +1,26 @@
+---
+- name: install apache
+  yum :
+    name: httpd
+    state: present
+
+- name: copy admin front
+  copy:
+    src: adminclient
+    dest: /var/www/html
+
+- name: copy user front
+  copy:
+    src: userclient
+    dest: /var/www/html
+
+- name: apache configuration
+  copy: 
+    src: httpd.conf
+    dest: /etc/httpd/conf/httpd.conf
+
+- name: start apache
+  service:
+    name: httpd
+    state: started
+
