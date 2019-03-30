@@ -4,6 +4,11 @@
     name: httpd
     state: present
 
+- name: start apache
+  service:
+    name: httpd
+    state: started
+
 - name: copy admin front
   copy:
     src: adminclient
@@ -19,8 +24,8 @@
     src: httpd.conf
     dest: /etc/httpd/conf/httpd.conf
 
-- name: start apache
+- name: restart apache
   service:
     name: httpd
-    state: started
+    state: restarted
 
