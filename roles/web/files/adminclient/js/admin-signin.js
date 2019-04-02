@@ -14,7 +14,7 @@ but.addEventListener("click", function () {
     }
 
   };
-  xhttp.open("POST", "http://127.0.0.1:5000/admin");
+  xhttp.open("POST", "http://18.217.63.113:5000/admin");
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(JSON.stringify(
     {
